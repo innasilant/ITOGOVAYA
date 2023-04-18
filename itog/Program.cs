@@ -6,3 +6,30 @@
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 [“Russia”, “Denmark”, “Kazan”] → []
 */
+
+string[] array = new string[4] { "1234", "1567", "-2", "computer science" };
+string[] newArray = new string[array.Length];
+void NewArray(string[] array, string[] newArray)
+{
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            newArray[j] = array[i];
+            j++;
+        }
+    }
+}
+
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+NewArray(array, newArray);
+PrintArray(newArray);
+
